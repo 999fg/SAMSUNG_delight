@@ -85,7 +85,7 @@ public class MainActivity extends Activity implements BluetoothServiceCallback, 
 
     private SurfaceView surface;
     private SurfaceHolder s_holder;
-    public ViewThread sThread;
+    //public ViewThread sThread;
     private int clicked = -1;
 
     @Override
@@ -113,21 +113,44 @@ public class MainActivity extends Activity implements BluetoothServiceCallback, 
         s_holder = surface.getHolder();
 
         s_holder.addCallback(new SurfaceHolder.Callback() {
-
+            Bitmap whiteKey, blackKey, orangeKey;
+            Paint paint = new Paint();
             public void surfaceCreated(SurfaceHolder holder) {
-                if(sThread == null) {        // if the first execution
-                    sThread = new ViewThread(s_holder, clicked);
-                    sThread.start();
-                } else {                    // if not the first execution
-                    // one time draw (no updatePosition here)
-                    synchronized(this) {
-
+                int ww = 0, wh = 0, bw = 0, bh = 0, ow = 0, oh = 0;
+                Canvas canvas = holder.lockCanvas();
+                if (whiteKey == null) {
+                    whiteKey = BitmapFactory.decodeResource(getResources(), R.drawable.whitekey);
+                    Double dww = whiteKey.getWidth() * 1.47;
+                    ww = dww.intValue();
+                    wh = whiteKey.getHeight();
+                }
+                if (blackKey == null) {
+                    blackKey = BitmapFactory.decodeResource(getResources(), R.drawable.blackkey);
+                    Double dbw = blackKey.getWidth() * 0.5;
+                    bw = dbw.intValue();
+                    bh = blackKey.getHeight();
+                }
+                if (orangeKey == null) {
+                    orangeKey = BitmapFactory.decodeResource(getResources(), R.drawable.orangekey);
+                    Double dow = orangeKey.getWidth() * 1.47;
+                    ow = dow.intValue();
+                    oh = orangeKey.getHeight();
+                }
+                for (int i = 0; i < 8; i++) {
+                    Rect dst = new Rect(8 + i * ww, 0, 8 + (i + 1) * ww, wh + 193);
+                    canvas.drawBitmap(whiteKey, null, dst, paint);
+                }
+                for (int i = 0; i < 8; i++) {
+                    if (i != 2 && i != 6) {
+                        Rect dst = new Rect(95 + i * ww, 0, 45 + (i + 1) * ww, bh + 80);
+                        canvas.drawBitmap(blackKey, null, dst, paint);
                     }
                 }
+                holder.unlockCanvasAndPost(canvas);
             }
 
             public void surfaceDestroyed(SurfaceHolder holder) {
-                sThread.stopSafely();
+
             }
 
             public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
@@ -508,10 +531,8 @@ public class MainActivity extends Activity implements BluetoothServiceCallback, 
         }
     }
     */
+    /*
     public class ViewThread extends Thread {
-        /*
-         * UI와 소통할 SurfaceHolder를 저장할 변수입니다.
-         */
         SurfaceHolder mHolder;                  // SurfaceHolder를 저장할 변수
         private boolean shouldStop = false;
         private int clicked = -1;
@@ -529,68 +550,25 @@ public class MainActivity extends Activity implements BluetoothServiceCallback, 
         @Override
         public void run() {
             Log.e("Test", "DDDD");
-            /*
-             * canvas를 생성합니다.
-             */
             Canvas canvas = null;
             while(!shouldStop){
                 Log.e("Test", "CCCC");
-                /*
-                 * canvas를 잠그고 버퍼를 할당합니다.
-                 */
                 canvas = mHolder.lockCanvas();
                 try {
                     Log.e("Test", "AAAA");
-                    /*
-                     * 동기화를 유지해줍니다.
-                     * 다중쓰레드로 꼬이면 안되니까요.
-                     */
                     synchronized (mHolder) {
                         Log.e("Test", "BBBB");
-                        int ww = 0, wh = 0, bw = 0, bh = 0, ow = 0, oh = 0;
-                        if (whiteKey == null) {
-                            whiteKey = BitmapFactory.decodeResource(getResources(), R.drawable.whitekey);
-                            Double dww = whiteKey.getWidth() * 1.47;
-                            ww = dww.intValue();
-                            wh = whiteKey.getHeight();
-                        }
-                        if (blackKey == null) {
-                            blackKey = BitmapFactory.decodeResource(getResources(), R.drawable.blackkey);
-                            Double dbw = blackKey.getWidth() * 0.5;
-                            bw = dbw.intValue();
-                            bh = blackKey.getHeight();
-                        }
-                        if (orangeKey == null) {
-                            orangeKey = BitmapFactory.decodeResource(getResources(), R.drawable.orangekey);
-                            Double dow = orangeKey.getWidth() * 1.47;
-                            ow = dow.intValue();
-                            oh = orangeKey.getHeight();
-                        }
-                        for (int i = 0; i < 8; i++) {
-                            Rect dst = new Rect(8 + i * ww, 0, 8 + (i + 1) * ww, wh + 193);
-                            canvas.drawBitmap(whiteKey, null, dst, paint);
-                        }
-                        for (int i = 0; i < 8; i++) {
-                            if (i != 2 && i != 6) {
-                                Rect dst = new Rect(95 + i * ww, 0, 45 + (i + 1) * ww, bh + 80);
-                                canvas.drawBitmap(blackKey, null, dst, paint);
-                            }
-                        }
                     }
-                    /*
-                     * 버퍼의 작업이 끝나면...
-                     */
+
                 } finally {
                     if(canvas != null){
                         Log.e("Test", "EEEE");
-                        /*
-                         * 버퍼의 내용을 view에 전송하여 줍니다.
-                         */
                         mHolder.unlockCanvasAndPost(canvas);
                     }
                 }
             }
         }
     }
+    */
 }
 

@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/Users/shinjaemin/Downloads/OrangeBLEChat2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/jars/classes.jar"
+        jar="/Users/shinjaemin/SAMSUNG_delight/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/libs/internal_impl-22.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
-        <dex dex="/Users/shinjaemin/Downloads/OrangeBLEChat2/app/build/intermediates/pre-dexed/debug/classes-9cf05e51bb0b357dd0af679757a3fe1c24d49284.jar" />
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/Users/shinjaemin/SAMSUNG_delight/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-a742255e6160c8135208dfc1793cc2a335a14ee4.jar" />
     </item>
     <item
         jar="/Users/shinjaemin/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="/Users/shinjaemin/Downloads/OrangeBLEChat2/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-313ddf88ad38061a0c6aca43fef88b22512484e6.jar" />
+        <dex dex="/Users/shinjaemin/SAMSUNG_delight/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-313ddf88ad38061a0c6aca43fef88b22512484e6.jar" />
     </item>
     <item
-        jar="/Users/shinjaemin/Downloads/OrangeBLEChat2/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/classes.jar"
+        jar="/Users/shinjaemin/SAMSUNG_delight/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="/Users/shinjaemin/Downloads/OrangeBLEChat2/app/build/intermediates/pre-dexed/debug/classes-6a454005190e258fe0d145ac8c92378d4df56298.jar" />
+        <dex dex="/Users/shinjaemin/SAMSUNG_delight/app/build/intermediates/pre-dexed/debug/classes-10cc98dc8dd5902fee7d12144610c033a9fc52ec.jar" />
     </item>
     <item
-        jar="/Users/shinjaemin/Downloads/OrangeBLEChat2/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/libs/internal_impl-22.0.0.jar"
+        jar="/Users/shinjaemin/SAMSUNG_delight/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="/Users/shinjaemin/Downloads/OrangeBLEChat2/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-36b1ff9383f744b36da6e17529d6a2bca4915fed.jar" />
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/Users/shinjaemin/SAMSUNG_delight/app/build/intermediates/pre-dexed/debug/classes-e10edccb2192691b17cb79e304f18baa17d240ee.jar" />
     </item>
 
 </items>
