@@ -20,7 +20,7 @@ public class PianoView extends SurfaceView implements SurfaceHolder.Callback {
     Context pcontext;
     SurfaceHolder pholder;
     PianoThread pthread;
-    int whatorange = 0;
+    int whatorange = -1;
 
     public PianoView(Context context, AttributeSet attrs){
         super(context, attrs);
@@ -44,7 +44,9 @@ public class PianoView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     class PianoThread extends Thread{
-        Bitmap whiteKey, blackKey, orangeKey;
+        Bitmap whiteKey, blackKey;
+        Bitmap[] colorKey = new Bitmap[8];
+        int[] Keysource = {R.drawable.redkey,R.drawable.orangekey,R.drawable.yellowkey,R.drawable.greenkey,R.drawable.bluekey,R.drawable.navykey,R.drawable.purplekey,R.drawable.pinkkey};
         Paint paint = new Paint();
         int ww = 0, wh = 0, bw = 0, bh = 0, ow = 0, oh = 0;
 
@@ -61,11 +63,13 @@ public class PianoView extends SurfaceView implements SurfaceHolder.Callback {
                 bw = dbw.intValue();
                 bh = blackKey.getHeight();
             }
-            if (orangeKey == null) {
-                orangeKey = BitmapFactory.decodeResource(pcontext.getResources(), R.drawable.orangekey);
-                Double dow = orangeKey.getWidth() * 1.47;
-                ow = dow.intValue();
-                oh = orangeKey.getHeight();
+            for(int i = 0; i<colorKey.length; i++){
+                if(colorKey[i] == null){
+                    colorKey[i] = BitmapFactory.decodeResource(pcontext.getResources(),Keysource[i]);
+                    Double dow = colorKey[i].getWidth() * 1.47;
+                    ow = dow.intValue();
+                    oh = colorKey[i].getHeight();
+                }
             }
         }
         public void run(){
@@ -77,13 +81,12 @@ public class PianoView extends SurfaceView implements SurfaceHolder.Callback {
                         for (int i = 0; i < 8; i++) {
                             Rect dst = new Rect(8 + i * ww, 0, 8 + (i + 1) * ww, wh + 193);
                             if(i == whatorange){
-                                canvas.drawBitmap(orangeKey, null, dst, paint);
+                                canvas.drawBitmap(colorKey[whatorange], null, dst, paint);
 
                             }else {
                                 canvas.drawBitmap(whiteKey, null, dst, paint);
                             }
                         }
-                        whatorange = (whatorange+1)%2;
                         for (int i = 0; i < 8; i++) {
                             if (i != 2 && i != 6) {
                                 Rect dst = new Rect(95 + i * ww, 0, 45 + (i + 1) * ww, bh + 80);

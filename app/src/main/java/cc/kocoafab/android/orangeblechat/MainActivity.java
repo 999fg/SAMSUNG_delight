@@ -112,7 +112,7 @@ public class MainActivity extends Activity implements BluetoothServiceCallback, 
         m_sound_idc6 = m_soundpool.load(getApplicationContext(), R.raw.c6, 1);
 
 
-        pianoView = (PianoView) getView(R.id.pianoview0);
+        pianoView = (PianoView) findViewById(R.id.pianoview0);
 
 
         /*
