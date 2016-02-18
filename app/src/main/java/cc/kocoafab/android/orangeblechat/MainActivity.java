@@ -108,6 +108,7 @@ public class MainActivity extends Activity implements BluetoothServiceCallback, 
         m_sound_ida = m_soundpool.load(getApplicationContext(), R.raw.a5, 1);
         m_sound_idb = m_soundpool.load(getApplicationContext(), R.raw.b5, 1);
         m_sound_idc6 = m_soundpool.load(getApplicationContext(), R.raw.c6, 1);
+        /*
 
         surface = (SurfaceView) findViewById(R.id.surface);
         s_holder = surface.getHolder();
@@ -156,6 +157,7 @@ public class MainActivity extends Activity implements BluetoothServiceCallback, 
             public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
             }
         });
+        */
     }
 
     /*
