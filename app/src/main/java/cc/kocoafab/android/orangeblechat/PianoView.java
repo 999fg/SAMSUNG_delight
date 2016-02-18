@@ -97,4 +97,8 @@ public class PianoView extends SurfaceView implements SurfaceHolder.Callback {
             }
         }
     }
+
+    public void setWhatorange(int w) {
+        whatorange = w;
+    }
 }

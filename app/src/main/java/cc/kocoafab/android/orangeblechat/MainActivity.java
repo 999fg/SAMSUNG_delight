@@ -83,6 +83,8 @@ public class MainActivity extends Activity implements BluetoothServiceCallback, 
     private int m_sound_idb;
     private int m_sound_idc6;
 
+    private PianoView pianoView;
+
     private SurfaceView surface;
     private SurfaceHolder s_holder;
     //public ViewThread sThread;
@@ -108,7 +110,14 @@ public class MainActivity extends Activity implements BluetoothServiceCallback, 
         m_sound_ida = m_soundpool.load(getApplicationContext(), R.raw.a5, 1);
         m_sound_idb = m_soundpool.load(getApplicationContext(), R.raw.b5, 1);
         m_sound_idc6 = m_soundpool.load(getApplicationContext(), R.raw.c6, 1);
+
+
+        pianoView = (PianoView) getView(R.id.pianoview0);
+
+
         /*
+
+
 
         surface = (SurfaceView) findViewById(R.id.surface);
         s_holder = surface.getHolder();
@@ -503,6 +512,7 @@ public class MainActivity extends Activity implements BluetoothServiceCallback, 
             m_soundpool.play(m_sound_idc6, 1, 1, 1, 0, 1);
             clicked =7;
         }
+        pianoView.setWhatorange(clicked);
     }
     /*
     class Piano extends View{

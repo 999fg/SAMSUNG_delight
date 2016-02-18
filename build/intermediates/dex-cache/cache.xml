@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/Users/shinjaemin/SAMSUNG_delight/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/libs/internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
-        <dex dex="/Users/shinjaemin/SAMSUNG_delight/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-a742255e6160c8135208dfc1793cc2a335a14ee4.jar" />
-    </item>
-    <item
-        jar="/Users/shinjaemin/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="/Users/shinjaemin/SAMSUNG_delight/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-313ddf88ad38061a0c6aca43fef88b22512484e6.jar" />
-    </item>
-    <item
-        jar="/Users/shinjaemin/SAMSUNG_delight/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/jars/classes.jar"
+        jar="C:\Users\KANON\Documents\SAMSUNG_delight\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
-        <dex dex="/Users/shinjaemin/SAMSUNG_delight/app/build/intermediates/pre-dexed/debug/classes-10cc98dc8dd5902fee7d12144610c033a9fc52ec.jar" />
+        <dex dex="C:\Users\KANON\Documents\SAMSUNG_delight\app\build\intermediates\pre-dexed\debug\classes-2f1a2d60c1ca61fb2797ba82f403a74c383ed902.jar" />
     </item>
     <item
-        jar="/Users/shinjaemin/SAMSUNG_delight/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/jars/classes.jar"
+        jar="C:\Users\KANON\Documents\SAMSUNG_delight\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="d84409890828e07d344a3b9b1da545dba9897b51">
-        <dex dex="/Users/shinjaemin/SAMSUNG_delight/app/build/intermediates/pre-dexed/debug/classes-e10edccb2192691b17cb79e304f18baa17d240ee.jar" />
+        <dex dex="C:\Users\KANON\Documents\SAMSUNG_delight\app\build\intermediates\pre-dexed\debug\classes-ffdcfdb2a29096febdea78699f70bef16265ff98.jar" />
+    </item>
+    <item
+        jar="C:\Users\KANON\Documents\SAMSUNG_delight\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="C:\Users\KANON\Documents\SAMSUNG_delight\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-458fb05fc9a2c1c5c82011c1057e1a3968987f68.jar" />
+    </item>
+    <item
+        jar="C:\Users\KANON\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="C:\Users\KANON\Documents\SAMSUNG_delight\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-5b3ca445bdfbc1f8f6d5e4fd440c9758f0c158bd.jar" />
     </item>
 
 </items>
