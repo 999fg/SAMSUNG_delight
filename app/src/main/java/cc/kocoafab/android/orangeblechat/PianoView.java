@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -21,6 +22,7 @@ public class PianoView extends SurfaceView implements SurfaceHolder.Callback {
     SurfaceHolder pholder;
     PianoThread pthread;
     int whatorange = -1;
+    long clicktime;
 
     public PianoView(Context context, AttributeSet attrs){
         super(context, attrs);
@@ -48,6 +50,8 @@ public class PianoView extends SurfaceView implements SurfaceHolder.Callback {
         Bitmap[] colorKey = new Bitmap[8];
         int[] Keysource = {R.drawable.redkey,R.drawable.orangekey,R.drawable.yellowkey,R.drawable.greenkey,R.drawable.bluekey,R.drawable.navykey,R.drawable.purplekey,R.drawable.pinkkey};
         Paint paint = new Paint();
+        Paint fade = new Paint();
+        Canvas canvas = null;
         int ww = 0, wh = 0, bw = 0, bh = 0, ow = 0, oh = 0;
 
         public PianoThread(){
@@ -73,7 +77,6 @@ public class PianoView extends SurfaceView implements SurfaceHolder.Callback {
             }
         }
         public void run(){
-            Canvas canvas = null;
             while(true){
                 canvas = pholder.lockCanvas();
                 try{
@@ -82,7 +85,14 @@ public class PianoView extends SurfaceView implements SurfaceHolder.Callback {
                             Rect dst = new Rect(8 + i * ww, 0, 8 + (i + 1) * ww, wh + 193);
                             if(i == whatorange){
                                 canvas.drawBitmap(colorKey[whatorange], null, dst, paint);
-
+                                int alpha = (int) (System.currentTimeMillis() - clicktime) / 3;
+                                alpha = alpha * alpha / 255;
+                                if(alpha > 255) {
+                                    alpha = 255;
+                                    whatorange = -1;
+                                }
+                                fade.setAlpha(alpha);
+                                canvas.drawBitmap(whiteKey, null, dst, fade);
                             }else {
                                 canvas.drawBitmap(whiteKey, null, dst, paint);
                             }
@@ -103,5 +113,6 @@ public class PianoView extends SurfaceView implements SurfaceHolder.Callback {
 
     public void setWhatorange(int w) {
         whatorange = w;
+        clicktime = System.currentTimeMillis();
     }
 }
